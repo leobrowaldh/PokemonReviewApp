@@ -20,7 +20,7 @@ public class PokemonRepository : IPokemonRepository
 	public decimal GetPokemonRating(int pokeId)
 	{
 		var review = _context.Reviews.Where(r => r.Pokemon.Id == pokeId);
-		if(!review.Any()) { return 0}
+		if(!review.Any()) { return 0; }
 		return ((decimal)review.Sum(r => r.Rating)/review.Count());
 	}
 
