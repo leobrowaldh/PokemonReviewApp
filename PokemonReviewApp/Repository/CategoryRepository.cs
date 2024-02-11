@@ -4,14 +4,8 @@ using PokemonReviewApp.Models;
 
 namespace PokemonReviewApp.Repository;
 
-public class CategoryRepository : ICategoryRepository
+public class CategoryRepository : Repository, ICategoryRepository
 {
-	private readonly DataContext _context;
-
-	public CategoryRepository(DataContext context)
-    {
-		_context = context;
-	}
     public bool CategoryExists(int id)
 	{
 		throw new NotImplementedException();

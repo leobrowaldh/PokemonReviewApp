@@ -4,15 +4,8 @@ using PokemonReviewApp.Models;
 
 namespace PokemonReviewApp.Repository;
 
-public class PokemonRepository : IPokemonRepository
+public class PokemonRepository : Repository, IPokemonRepository
 {
-    private readonly DataContext _context;
-
-    public PokemonRepository(DataContext context)
-    {
-        _context = context;
-    }
-
 	public Pokemon? GetPokemon(int id) => _context.Pokemons.Find(id);
 
 	public Pokemon? GetPokemon(string name) => _context.Pokemons.FirstOrDefault(p => p.Name == name);
