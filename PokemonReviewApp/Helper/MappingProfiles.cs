@@ -8,6 +8,8 @@ public class MappingProfiles : Profile
 {
     public MappingProfiles()
     {
-        CreateMap<Pokemon, PokemonDto>();
+        CreateMap<Pokemon, PokemonDto>().ReverseMap();
+        CreateMap<Category, CategoryDto>().ReverseMap();
+        CreateMap<Country, CountryDto>().ReverseMap();
     }
 }
